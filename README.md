@@ -19,7 +19,7 @@
 
 Using an Arduino with an ATmega32u4 (which can emulate a keyboard) and a USB host shield, this combination can be used as a keylogger. The addition of an ESP8266 allows you to store and retrieve the keystrokes in a log file.  
 
-**This is just a proof of concept**
+**This is just a proof of concept**  
 Please don't expect this to work with every keyboard layout!  
 I saw a few forum threads about making a USB keylogger with Arduino using a USB Host shield, but I couldn't find any published project about this.  
 So I hope this is a good basis for someone who wants to make a proper keylogger, though **I won't develop this any further**.  
