@@ -43,27 +43,27 @@ What you will need:
 - **ESP8266 Wi-Fi chip**  
 - **Arduino with an ATmega32u4**  
 - **USB Host Shield**
-  There are different versions out there
-![usb hist shields](https://raw.githubusercontent.com/spacehuhn/wifi_keylogger/master/images/usb_host_shields.jpg)
+  There are different versions out there  
+![usb host shields](https://raw.githubusercontent.com/spacehuhn/wifi_keylogger/master/images/usb_host_shields.jpg)  
 Have a look at the official site: https://www.circuitsathome.com/usb-host-shield-hardware-manual/
 
 I used an Arduino Leonardo with the big host shield.  
 
-![arduino leonardo with USB host shield and a nodemcu](https://raw.githubusercontent.com/spacehuhn/wifi_keylogger/master/images/keylogger_with_nodemcu.jpg)
+![arduino leonardo with USB host shield and a nodemcu](https://raw.githubusercontent.com/spacehuhn/wifi_keylogger/master/images/keylogger_with_nodemcu.jpg)  
 
-You could probably build a very small version using the mini host shield and a pro micro.
+You could probably build a very small version using the mini host shield and a pro micro.  
 http://forum.arduino.cc/index.php?topic=325930.0
 
 
 ### ESP8266
 
-Open the `esp8266_saveSerial` sketch with [Arduino](https://www.arduino.cc/en/Main/Software).
+Open the `esp8266_saveSerial` sketch with [Arduino](https://www.arduino.cc/en/Main/Software).  
 You need to install the following Librarys:
 - [the latest ESP8266 SDK](https://github.com/esp8266/Arduino)
 - [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer)
 - [ESPAsyncTCP](https://github.com/me-no-dev/ESPAsyncTCP)
 
-Then compile and upload it to your ESP8266 (check if your settings are right).
+Then compile and upload it to your ESP8266 (check if your settings are right).  
 
 ### Arduino ATmega32u4
 
@@ -73,7 +73,7 @@ You will need the [USB Host Shield 2.0 Library](https://github.com/felis/USB_Hos
 ### Wire everything up
 
 Ok so now you need to connect the ESP8266 with the Arduino.  
-Connect these pins:
+Connect these pins:  
 
 | Arduino       | ESP82666      |
 | ------------- |:-------------:|
@@ -85,7 +85,7 @@ Connect these pins:
 **Note:** you'll need a 3.3V regulator if your Arduino only provides 5V.  
 **Don't connect the ESP8266 to 5V!**  
 
-If you use a plain ESP-12, you also have to set the enable pin and to HIGH and GPIO15 to LOW:
+If you use a plain ESP-12, you also have to set the enable pin and to HIGH and GPIO15 to LOW:  
 
 | PIN          | Mode       |
 | ------------ |:----------:|
@@ -95,11 +95,11 @@ If you use a plain ESP-12, you also have to set the enable pin and to HIGH and G
 ## How to use it
 
 Plug the leonardo in the computer and the keyboard into the USB host shield. The ESP8266 will create a new access point `definitely not a keylogger`. Connect to it using the password is `!keylogger`.  
-Open your browser and go to `192.168.4.1`, you will see every keytroke. 
+Open your browser and go to `192.168.4.1`, you will see every keytroke.  
 
 ![screenshot of the webinterface](https://raw.githubusercontent.com/spacehuhn/wifi_keylogger/master/images/screenshot.JPG)
 
-To clear the logfile go to `192.168.4.1/clear`.
+To clear the logfile go to `192.168.4.1/clear`.  
 
 ## License
 
