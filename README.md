@@ -1,5 +1,5 @@
 # wifi_keylogger
-DIY Arduino Keylogger - with Wi-Fi! (Proof of Concept)
+(Proof of Concept) Arduino Keylogger with Wi-Fi! 
 
 ![arduino leonardo with usb host shield and a nodemcu](https://raw.githubusercontent.com/spacehuhn/wifi_keylogger/master/images/keylogger_with_nodemcu_2.jpg)
 
@@ -17,7 +17,7 @@ DIY Arduino Keylogger - with Wi-Fi! (Proof of Concept)
 
 ## Introduction ##
 
-Using an Arduino with an ATmega32u4 (which can emulate a keyboard) and a USB host shield, this combination can be used as a keylogger. The addition of an ESP8266 allows to store and retrieve the keystrokes in a log file.  
+Using an Arduino with an ATmega32u4 (which can emulate a keyboard) and a USB host shield, this combination can be used as a keylogger. The addition of an ESP8266 allows you to store and retrieve the keystrokes in a log file.  
 
 **This is just a proof of concept**
 Please don't expect this to work with every keyboard layout!  
@@ -67,8 +67,8 @@ Then compile and upload it to your ESP8266 (check if your settings are right).
 
 ### Arduino ATmega32u4
 
-Open the `keylogger` sketch in Arduino and upload it to your Arduino.  
 You will need the [USB Host Shield 2.0 Library](https://github.com/felis/USB_Host_Shield_2.0).  
+Open the `keylogger` sketch in Arduino and upload it to your Arduino.  
 
 ### Wire everything up
 
@@ -94,7 +94,7 @@ If you use a plain ESP-12, you also have to set the enable pin and to HIGH and G
 
 ## How to use it
 
-Plug the leonardo in the computer and the keyboard into the USB host shield. The ESP8266 will create a new access point `definitely not a keylogger`. Connect to it using the password is `!keylogger`.  
+Plug the leonardo in the computer and the keyboard into the USB host shield. The ESP8266 will create a new access point `definitely not a keylogger`. Connect to it using the password `!keylogger`.  
 Open your browser and go to `192.168.4.1`, you will see every keytroke.  
 
 ![screenshot of the webinterface](https://raw.githubusercontent.com/spacehuhn/wifi_keylogger/master/images/screenshot.JPG)
