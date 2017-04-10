@@ -1,4 +1,4 @@
-# wifi_keylogger
+# Wi-Fi Keylogger
 (Proof of Concept) Arduino Keylogger with Wi-Fi! 
 
 ![arduino leonardo with usb host shield and a nodemcu](https://raw.githubusercontent.com/spacehuhn/wifi_keylogger/master/images/keylogger_with_nodemcu_2.jpg)
