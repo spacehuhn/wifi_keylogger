@@ -3,7 +3,10 @@
 
 ![arduino leonardo with usb host shield and a nodemcu](https://raw.githubusercontent.com/spacehuhn/wifi_keylogger/master/images/keylogger_with_nodemcu_2.jpg)
 
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RCHANSVSX9M8C)  
+[**Support me and my projects on Patreon!**  
+<img width="450" alt="Support me on Patreon" src="https://raw.githubusercontent.com/spacehuhn/wifi_keylogger/master/images/patreon.png">](https://www.patreon.com/spacehuhn)  
+
+
 
 ## Contents
 - [Introduction](#introduction)
