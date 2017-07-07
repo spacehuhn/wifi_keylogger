@@ -62,7 +62,7 @@ http://forum.arduino.cc/index.php?topic=325930.0
 ### ESP8266
 
 Open the `esp8266_saveSerial` sketch with [Arduino](https://www.arduino.cc/en/Main/Software).  
-You need to install the following Librarys:
+You need to install the following libraries:
 - [the latest ESP8266 SDK](https://github.com/esp8266/Arduino)
 - [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer)
 - [ESPAsyncTCP](https://github.com/me-no-dev/ESPAsyncTCP)
@@ -99,11 +99,11 @@ If you use a plain ESP-12, you also have to set the enable pin and to HIGH and G
 ## How to use it
 
 Plug the leonardo in the computer and the keyboard into the USB host shield. The ESP8266 will create a new access point `definitely not a keylogger`. Connect to it using the password `!keylogger`.  
-Open your browser and go to `192.168.4.1`, you will see every keytroke.  
+Open your browser and go to `192.168.4.1`, you will see every keystroke.  
 
 ![screenshot of the webinterface](https://raw.githubusercontent.com/spacehuhn/wifi_keylogger/master/images/screenshot.JPG)
 
-To clear the logfile go to `192.168.4.1/clear`.  
+To clear the log file go to `192.168.4.1/clear`.  
 
 ## License
 
