@@ -99,7 +99,7 @@ If you use a plain ESP-12, you also have to set the enable pin and to HIGH and G
 ## How to use it
 
 Plug the leonardo in the computer and the keyboard into the USB host shield. The ESP8266 will create a new access point `definitely not a keylogger`. Connect to it using the password `!keylogger`.  
-Open your browser and go to `192.168.4.1`, you will see every keytroke.  
+Open your browser and go to `192.168.4.1`, you will see every keystroke.  
 
 ![screenshot of the webinterface](https://raw.githubusercontent.com/spacehuhn/wifi_keylogger/master/images/screenshot.JPG)
 
