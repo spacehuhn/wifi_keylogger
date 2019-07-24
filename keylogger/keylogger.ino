@@ -36,17 +36,56 @@ class KbdRptParser : public KeyboardReportParser{
 
 void KbdRptParser::OnKeyDown(uint8_t mod, uint8_t key){
   int parsedKey = _parse(key);
-  if(parsedKey == key){
-    uint8_t c = OemToAscii(mod, key);
+  
+  if((key >= 0x59) && (key <= 0x62)){
+
+    uint8_t c;
+    switch(key){
+      case 0x59: c = '1'; break;
+      case 0x5A: c = '2'; break;
+      case 0x5B: c = '3'; break;
+      case 0x5C: c = '4'; break;
+      case 0x5D: c = '5'; break;
+      case 0x5E: c = '6'; break;
+      case 0x5F: c = '7'; break;
+      case 0x60: c = '8'; break;
+      case 0x61: c = '9'; break;
+      case 0x62: c = '0'; break;
+    }
     OnKeyPressed(c);
-    if(c != 0x20 && c != 0x00) _press(c);
-    else _press(key);
+    _press(c);
+    
+    }else if(parsedKey == key){
+      uint8_t c = OemToAscii(mod, key);
+      OnKeyPressed(c);
+      if(c != 0x20 && c != 0x00) _press(c);
+      else _press(key);
   }else _press(parsedKey);
 }
 
 void KbdRptParser::OnKeyUp(uint8_t mod, uint8_t key){
   int parsedKey = _parse(key);
-  if(parsedKey == key){
+
+
+  if((key >= 0x59) && (key <= 0x62)){
+
+    uint8_t c;
+    switch(key){
+      case 0x59: c = '1'; break;
+      case 0x5A: c = '2'; break;
+      case 0x5B: c = '3'; break;
+      case 0x5C: c = '4'; break;
+      case 0x5D: c = '5'; break;
+      case 0x5E: c = '6'; break;
+      case 0x5F: c = '7'; break;
+      case 0x60: c = '8'; break;
+      case 0x61: c = '9'; break;
+      case 0x62: c = '0'; break;
+    };
+     _release(c);
+     Serial.print(_getChar(key));
+     
+  } else if(parsedKey == key){
     uint8_t c = OemToAscii(mod, key);
     OnKeyPressed(c);
     if(c != 0x20 && c != 0x00){
@@ -168,6 +207,9 @@ uint8_t KbdRptParser::_parse(uint8_t key){
     case 81: return KEY_DOWN_ARROW; break;
     case 82: return KEY_UP_ARROW; break;
     case 88: return KEY_RETURN; break;
+    // Extension for Caps Lock
+    case 0x39: return KEY_CAPS_LOCK; break;
+    
     //=====[DE-Keyboard]=====//
     case 0x64: return 236; break; // <
     case 0x32: return 92; break; // #
@@ -178,13 +220,12 @@ uint8_t KbdRptParser::_parse(uint8_t key){
     }
   }
 }
-
 String KbdRptParser::_getChar(uint8_t key){
   switch(key){
     case 0x2C: return " "; break;
     case 40: return "<RETURN>\n"; break;
     case 41: return "<ESC>\n"; break;
-    case 42: return "<BACKSPCAE>"; break;
+    case 42: return "<BACKSPACE>"; break;
     case 43: return "<TAB>\n"; break;
     case 58: return "<F1>\n"; break;
     case 59: return "<F2>\n"; break;
@@ -209,6 +250,18 @@ String KbdRptParser::_getChar(uint8_t key){
     case 81: return "<DOWN_ARROW>\n"; break;
     case 82: return "<UP_ARROW>\n"; break;
     case 88: return "<RETURN>\n"; break;
+    // Extension for NumPad
+    case 0x59: return "<NUMPAD_1>\n"; break;
+    case 0x5A: return "<NUMPAD_2>\n"; break;
+    case 0x5B: return "<NUMPAD_3>\n"; break;
+    case 0x5C: return "<NUMPAD_4>\n"; break;
+    case 0x5D: return "<NUMPAD_5>\n"; break;
+    case 0x5E: return "<NUMPAD_6>\n"; break;
+    case 0x5F: return "<NUMPAD_7>\n"; break;
+    case 0x60: return "<NUMPAD_8>\n"; break;
+    case 0x61: return "<NUMPAD_9>\n"; break;
+    case 0x62: return "<NUMPAD_0>\n"; break;
+    case 0x39: return "<CAPS_LOCK>\n"; break;
     //=====[DE-Keyboard]=====//
     case 0x64: {
       if(shift) return "<";
@@ -250,6 +303,7 @@ void setup()
   Serial.begin(115200);
   Keyboard.begin();
   delay(2000);
+  
 /*
   for(int i=0;i<256;i++){
     
@@ -275,4 +329,3 @@ void setup()
 void loop(){
   Usb.Task();
 }
-
